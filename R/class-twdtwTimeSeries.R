@@ -141,7 +141,7 @@ setMethod(f = "twdtwTimeSeries",
                   joint_timeseries = c(joint_timeseries, twdtw_obj)
               } else {}
               if(is.null(labels)) labels = names(joint_timeseries)
-              new("twdtwTimeSeries", timeseries = joint_timeseries, labels = labels)
+              methods::new("twdtwTimeSeries", timeseries = joint_timeseries, labels = labels)
           })
           
           

@@ -87,7 +87,7 @@ shiftDates.twdtwTimeSeries = function(x, year){
   last_date = tail(dates, 1)
   shift_days = as.numeric(last_date - as.Date(paste0(year,format(last_date, "-%m-%d"))))
   d = as.numeric(dates) - shift_days
-  new("twdtwTimeSeries", timeseries=zoo(data.frame(x), as.Date(d)), labels=labels)
+  methods::new("twdtwTimeSeries", timeseries=zoo(data.frame(x), as.Date(d)), labels=labels)
 }
 
 

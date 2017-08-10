@@ -83,7 +83,7 @@ subset.twdtwTimeSeries = function(x, labels){
   if(is.null(labels)) labels = labels(x)
   if(is.numeric(labels)) return(twdtwTimeSeries(x@timeseries[labels], labels=x@labels[labels]))
   I = which(!is.na(match(x@labels, labels)))
-  if(length(I)<1) return(new("twdtwTimeSeries"))
+  if(length(I)<1) return(methods::new("twdtwTimeSeries"))
   twdtwTimeSeries(x@timeseries[I], labels=x@labels[I])
 }
 

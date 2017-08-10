@@ -34,7 +34,7 @@ setGeneric("projecttwdtwRaster",
            function(x, ...) standardGeneric("projecttwdtwRaster"))
 
 as.list.twdtwTimeSeries = function(x) lapply(seq_along(x), function(i) 
-  new("twdtwTimeSeries", x[[i]], labels(x)[i]) )
+  methods::new("twdtwTimeSeries", x[[i]], labels(x)[i]) )
 
 as.list.twdtwRaster = function(x) {
   I = coverages(x)
@@ -43,7 +43,7 @@ as.list.twdtwRaster = function(x) {
 }
 
 as.list.twdtwMatches = function(x) lapply(seq_along(x@timeseries), function(i) 
-  new("twdtwMatches", new("twdtwTimeSeries", x@timeseries[[i]], labels(x@timeseries)[i]), x@patterns, list(x@alignments[[i]])) )
+  methods::new("twdtwMatches", new("twdtwTimeSeries", x@timeseries[[i]], labels(x@timeseries)[i]), x@patterns, list(x@alignments[[i]])) )
 
 dim.twdtwTimeSeries = function(x){
   res = data.frame(as.character(labels(x)), t(sapply(x@timeseries, dim)))
@@ -325,8 +325,8 @@ setMethod("[", "twdtwRaster", function(x, i) {
     stop("subscript out of bounds")
   if(any(is.na(i))) stop("NA index not permitted")
   if(any("doy"==layers(x)))
-    return(new("twdtwRaster", timeseries=x@timeseries[i], timeline = x@timeline, doy = x@timeseries[[1]]))
-  new("twdtwRaster", timeseries=x@timeseries[i], timeline = x@timeline)
+    return(methods::new("twdtwRaster", timeseries=x@timeseries[i], timeline = x@timeline, doy = x@timeseries[[1]]))
+  methods::new("twdtwRaster", timeseries=x@timeseries[i], timeline = x@timeline)
 })
 
 #' @inheritParams twdtwRaster-class

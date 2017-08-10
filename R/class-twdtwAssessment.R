@@ -73,7 +73,7 @@ setMethod("initialize",
                                                    ErrorMatrix=table(NULL)))
               .Object@data = SpatialPointsDataFrame(coords = cbind(0,0), 
                                                     data = data.frame(Sample.id=0, Period=NA, from=NA, to=NA, Distance=NA, Predicted=NA, Reference=NA, Distance=NA))
-              .Object@map = new("twdtwRaster")
+              .Object@map = methods::new("twdtwRaster")
               if(!missing(accuracySummary))
                 .Object@accuracySummary = accuracySummary
               if(!missing(accuracyByPeriod))

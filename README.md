@@ -130,13 +130,13 @@ Fig. 2. Classification using the best match for each subinterval.
 The next example shows how to classify a raster time series, i.e. the same as we did in the quick demo but now for each pixel location. For that we use a set of MODIS (MOD13Q1 product) images from 2007 to 2013 for a region in the Brazilian Amazon. These data is included in the package installation. Load raster time series:
 
 ``` r
-evi  <- brick(system.file("lucc_MT/data/evi.tif",  package = "dtwSat"))
-ndvi <- brick(system.file("lucc_MT/data/ndvi.tif", package = "dtwSat"))
-red  <- brick(system.file("lucc_MT/data/red.tif",  package = "dtwSat"))
-blue <- brick(system.file("lucc_MT/data/blue.tif", package = "dtwSat"))
-nir  <- brick(system.file("lucc_MT/data/nir.tif",  package = "dtwSat"))
-mir  <- brick(system.file("lucc_MT/data/mir.tif",  package = "dtwSat"))
-doy  <- brick(system.file("lucc_MT/data/doy.tif",  package = "dtwSat"))
+evi  <- raster::brick(system.file("lucc_MT/data/evi.tif",  package = "dtwSat"))
+ndvi <- raster::brick(system.file("lucc_MT/data/ndvi.tif", package = "dtwSat"))
+red  <- raster::brick(system.file("lucc_MT/data/red.tif",  package = "dtwSat"))
+blue <- raster::brick(system.file("lucc_MT/data/blue.tif", package = "dtwSat"))
+nir  <- raster::brick(system.file("lucc_MT/data/nir.tif",  package = "dtwSat"))
+mir  <- raster::brick(system.file("lucc_MT/data/mir.tif",  package = "dtwSat"))
+doy  <- raster::brick(system.file("lucc_MT/data/doy.tif",  package = "dtwSat"))
 ```
 
 Load the dates of the MODIS images:

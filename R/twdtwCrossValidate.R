@@ -101,7 +101,7 @@ twdtwCrossValidate.twdtwTimeSeries = function(object, times, p, ...){
     list(OverallAccuracy=O, UsersAccuracy=UA, ProducersAccuracy=PA, ErrorMatrix=error.matrix, data=data)
   })
   
-  new("twdtwCrossValidation", partitions=partitions, accuracy=res)
+  methods::new("twdtwCrossValidation", partitions=partitions, accuracy=res)
   
 }
 

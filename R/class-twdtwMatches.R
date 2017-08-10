@@ -98,8 +98,8 @@ setMethod("initialize",
           signature = "twdtwMatches",
           definition = 
             function(.Object, timeseries, patterns, alignments){
-              .Object@timeseries = new("twdtwTimeSeries")
-              .Object@patterns = new("twdtwTimeSeries")
+              .Object@timeseries = methods::new("twdtwTimeSeries")
+              .Object@patterns = methods::new("twdtwTimeSeries")
               .Object@alignments = list()
               if(!missing(alignments))
                 .Object@alignments = alignments
@@ -139,5 +139,5 @@ setMethod(f = "twdtwMatches",
                 if(is.null(timeseries)) timeseries = do.call("twdtwTimeSeries", lapply(alignments, function(x) subset(x@timeseries)))
                 if(is.null(patterns)) patterns=alignments[[1]]@patterns
               }
-              new("twdtwMatches", timeseries=timeseries, patterns=patterns, alignments=aligs)
+              methods::new("twdtwMatches", timeseries=timeseries, patterns=patterns, alignments=aligs)
           })

@@ -131,12 +131,12 @@ data_folder <- system.file("lucc_MT/data", package = "dtwSat")
 dir(data_folder)
 
 ## ---- echo = TRUE, eval = TRUE--------------------------------------------
-blue <- brick(paste(data_folder, "blue.tif", sep = "/"))
-red  <- brick(paste(data_folder,  "red.tif", sep = "/"))
-nir  <- brick(paste(data_folder,  "nir.tif", sep = "/"))
-mir  <- brick(paste(data_folder,  "mir.tif", sep = "/"))
-evi  <- brick(paste(data_folder,  "evi.tif", sep = "/"))
-ndvi <- brick(paste(data_folder, "ndvi.tif", sep = "/"))
+blue <- raster::brick(paste(data_folder, "blue.tif", sep = "/"))
+red  <- raster::brick(paste(data_folder,  "red.tif", sep = "/"))
+nir  <- raster::brick(paste(data_folder,  "nir.tif", sep = "/"))
+mir  <- raster::brick(paste(data_folder,  "mir.tif", sep = "/"))
+evi  <- raster::brick(paste(data_folder,  "evi.tif", sep = "/"))
+ndvi <- raster::brick(paste(data_folder, "ndvi.tif", sep = "/"))
 day_of_year <- brick(paste(data_folder, "doy.tif", sep = "/"))
 dates <- scan(paste(data_folder, "timeline", sep = "/"), what = "dates")
 

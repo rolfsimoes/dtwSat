@@ -151,7 +151,7 @@ twdtwAssess.twdtwTimeSeries = function(object, area, conf.int, rm.nosample){
   
   res = .twdtwAssess(error_matrix, area, conf.int, rm.nosample)
 
-  new("twdtwAssessment", accuracySummary=res)
+  methods::new("twdtwAssessment", accuracySummary=res)
 }
 
 twdtwAssess.table = function(object, area, conf.int, rm.nosample){
@@ -164,7 +164,7 @@ twdtwAssess.table = function(object, area, conf.int, rm.nosample){
   
   accuracy = .twdtwAssess(object, area, conf.int, rm.nosample)
   
-  new("twdtwAssessment", accuracySummary=accuracy, accuracyByPeriod=accuracy)
+  methods::new("twdtwAssessment", accuracySummary=accuracy, accuracyByPeriod=accuracy)
 }
   
 twdtwAssess.twdtwRaster = function(object, y, labels, id.labels, proj4string, conf.int, rm.nosample){
@@ -220,7 +220,7 @@ twdtwAssess.twdtwRaster = function(object, y, labels, id.labels, proj4string, co
                                    data = samples_all[,!names(samples_all)%in%c("longitude", "latitude")],
                                    proj4string = CRS(projection(object)))
   
-  new("twdtwAssessment", accuracySummary = accuracy_summary, 
+  methods::new("twdtwAssessment", accuracySummary = accuracy_summary, 
                          accuracyByPeriod = accuracy_by_period, 
                          data = sp.data,
                          map = object)

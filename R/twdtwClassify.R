@@ -204,5 +204,5 @@ twdtwClassify.twdtwMatches = function(x, patterns.labels, breaks, overlap, thres
   names(I) = levels[I]
   aligs = lapply(levels, initAlignments)
   aligs[names(I)] = lapply(I, function(i) subset(x, timeseries.labels = 1, patterns.labels = i, k = best_matches[IL==i,3])@alignments[[1]][[1]] )
-  new("twdtwMatches", x@timeseries, x@patterns, alignments=list(aligs))
+  methods::new("twdtwMatches", x@timeseries, x@patterns, alignments=list(aligs))
 }

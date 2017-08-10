@@ -324,12 +324,12 @@ dir(data_folder)
 
 We have stored all the time series for each band in one single file. In this way, we can use the function \code{raster::brick} to read the satellite images. The algorithm also works when the time steps for each band are split in many files. In this case, the user should call the function \code{raster::stack} with the appropriate parameters. Because of processing performance, we suggest that interested users group their images in bricks and follow the procedures given below.
 ```{r, echo = TRUE, eval = TRUE}
-blue <- brick(paste(data_folder, "blue.tif", sep = "/"))
-red  <- brick(paste(data_folder,  "red.tif", sep = "/"))
-nir  <- brick(paste(data_folder,  "nir.tif", sep = "/"))
-mir  <- brick(paste(data_folder,  "mir.tif", sep = "/"))
-evi  <- brick(paste(data_folder,  "evi.tif", sep = "/"))
-ndvi <- brick(paste(data_folder, "ndvi.tif", sep = "/"))
+blue <- raster::brick(paste(data_folder, "blue.tif", sep = "/"))
+red  <- raster::brick(paste(data_folder,  "red.tif", sep = "/"))
+nir  <- raster::brick(paste(data_folder,  "nir.tif", sep = "/"))
+mir  <- raster::brick(paste(data_folder,  "mir.tif", sep = "/"))
+evi  <- raster::brick(paste(data_folder,  "evi.tif", sep = "/"))
+ndvi <- raster::brick(paste(data_folder, "ndvi.tif", sep = "/"))
 day_of_year <- brick(paste(data_folder, "doy.tif", sep = "/"))
 dates <- scan(paste(data_folder, "timeline", sep = "/"), what = "dates")
 ```

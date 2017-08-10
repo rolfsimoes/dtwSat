@@ -218,7 +218,7 @@ twdtwApplyParallel.twdtwRaster = function(x, y, weight.fun, dist.method, step.ma
   
   names(out) <- levels
     
-  new("twdtwRaster", timeseries = out, timeline = breaks[-1], layers = levels)
+  methods::new("twdtwRaster", timeseries = out, timeline = breaks[-1], layers = levels)
   
 }
 

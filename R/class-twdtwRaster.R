@@ -232,8 +232,8 @@ creat.twdtwRaster = function(timeseries, timeline, doy, layers, labels, levels, 
   # }
   if(is.null(layers)) layers = names(res)
   if(is.null(doy)) 
-    return(new("twdtwRaster", timeseries = res, timeline = timeline, layers = layers, labels = labels, levels=levels))
-  new("twdtwRaster", timeseries = res, timeline = timeline, doy=doy, layers = layers, labels = labels, levels=levels)
+    return(methods::new("twdtwRaster", timeseries = res, timeline = timeline, layers = layers, labels = labels, levels=levels))
+  methods::new("twdtwRaster", timeseries = res, timeline = timeline, doy=doy, layers = layers, labels = labels, levels=levels)
 }
 
 .creat.doy = function(x, timeline){
