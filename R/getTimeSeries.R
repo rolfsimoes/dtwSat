@@ -63,8 +63,8 @@ setGeneric("getPatterns", function(object, ...) standardGeneric("getPatterns"))
 #' ## This example creates a twdtwRaster object and extract time series from it. 
 #'
 #' # Creating objects of class twdtwRaster with evi and ndvi time series 
-#' evi = brick(system.file("lucc_MT/data/evi.tif", package="dtwSat"))
-#' ndvi = brick(system.file("lucc_MT/data/ndvi.tif", package="dtwSat"))
+#' evi = raster::brick(system.file("lucc_MT/data/evi.tif", package="dtwSat"))
+#' ndvi = raster::brick(system.file("lucc_MT/data/ndvi.tif", package="dtwSat"))
 #' timeline = scan(system.file("lucc_MT/data/timeline", package="dtwSat"), what="date")
 #' rts = twdtwRaster(evi, ndvi, timeline=timeline)
 #' 

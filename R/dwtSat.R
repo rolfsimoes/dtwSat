@@ -35,4 +35,7 @@
 #' 
 #' @seealso \code{\link[dtwSat]{twdtwApply}}
 #' 
-NULL
+#' define the dependencies of the dtwSat package
+#' @import lattice
+#' 
+library(lattice)

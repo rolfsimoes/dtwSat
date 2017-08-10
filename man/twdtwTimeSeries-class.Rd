@@ -79,7 +79,7 @@ Class for set of irregular time series.
 
 \examples{
 # Creating new object of class twdtwTimeSeries  
-ptt = new("twdtwTimeSeries", timeseries = MOD13Q1.patterns.list, 
+ptt = methods::new("twdtwTimeSeries", timeseries = MOD13Q1.patterns.list, 
            labels = names(MOD13Q1.patterns.list))
 class(ptt)
 labels(ptt)
