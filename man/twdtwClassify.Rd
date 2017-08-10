@@ -67,13 +67,13 @@ library(dtwSat)
 library(caret) 
 
 # Load raster data 
-evi  <- brick(system.file("lucc_MT/data/evi.tif",  package = "dtwSat"))
-ndvi <- brick(system.file("lucc_MT/data/ndvi.tif", package = "dtwSat"))
-red  <- brick(system.file("lucc_MT/data/red.tif",  package = "dtwSat"))
-blue <- brick(system.file("lucc_MT/data/blue.tif", package = "dtwSat"))
-nir  <- brick(system.file("lucc_MT/data/nir.tif",  package = "dtwSat"))
-mir  <- brick(system.file("lucc_MT/data/mir.tif",  package = "dtwSat"))
-doy  <- brick(system.file("lucc_MT/data/doy.tif",  package = "dtwSat"))
+evi  <- raster::brick(system.file("lucc_MT/data/evi.tif",  package = "dtwSat"))
+ndvi <- raster::brick(system.file("lucc_MT/data/ndvi.tif", package = "dtwSat"))
+red  <- raster::brick(system.file("lucc_MT/data/red.tif",  package = "dtwSat"))
+blue <- raster::brick(system.file("lucc_MT/data/blue.tif", package = "dtwSat"))
+nir  <- raster::brick(system.file("lucc_MT/data/nir.tif",  package = "dtwSat"))
+mir  <- raster::brick(system.file("lucc_MT/data/mir.tif",  package = "dtwSat"))
+doy  <- raster::brick(system.file("lucc_MT/data/doy.tif",  package = "dtwSat"))
 timeline <- 
   scan(system.file("lucc_MT/data/timeline", package = "dtwSat"), what="date")
 
@@ -136,13 +136,13 @@ library(dtwSat)
 library(caret) 
 
 # Load raster data 
-evi  <- brick(system.file("lucc_MT/data/evi.tif",  package = "dtwSat"))
-ndvi <- brick(system.file("lucc_MT/data/ndvi.tif", package = "dtwSat"))
-red  <- brick(system.file("lucc_MT/data/red.tif",  package = "dtwSat"))
-blue <- brick(system.file("lucc_MT/data/blue.tif", package = "dtwSat"))
-nir  <- brick(system.file("lucc_MT/data/nir.tif",  package = "dtwSat"))
-mir  <- brick(system.file("lucc_MT/data/mir.tif",  package = "dtwSat"))
-doy  <- brick(system.file("lucc_MT/data/doy.tif",  package = "dtwSat"))
+evi  <- raster::brick(system.file("lucc_MT/data/evi.tif",  package = "dtwSat"))
+ndvi <- raster::brick(system.file("lucc_MT/data/ndvi.tif", package = "dtwSat"))
+red  <- raster::brick(system.file("lucc_MT/data/red.tif",  package = "dtwSat"))
+blue <- raster::brick(system.file("lucc_MT/data/blue.tif", package = "dtwSat"))
+nir  <- raster::brick(system.file("lucc_MT/data/nir.tif",  package = "dtwSat"))
+mir  <- raster::brick(system.file("lucc_MT/data/mir.tif",  package = "dtwSat"))
+doy  <- raster::brick(system.file("lucc_MT/data/doy.tif",  package = "dtwSat"))
 timeline <- 
   scan(system.file("lucc_MT/data/timeline", package = "dtwSat"), what="date")
 
@@ -177,10 +177,10 @@ r_twdtw <-
   twdtwApply(x = rts, y = temporal_patterns, weight.fun = log_fun, progress = 'text')
 
 # or Run parallel TWDTW analysis
-beginCluster()
+raster::beginCluster()
 r_twdtw <- 
   twdtwApplyParallel(x = rts, y = temporal_patterns, weight.fun = log_fun, progress = 'text')
-endCluster()
+raster::endCluster()
 
 # Plot TWDTW distances for the first year 
 plot(r_twdtw, type = "distance", time.levels = 1)

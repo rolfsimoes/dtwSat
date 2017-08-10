@@ -22,6 +22,8 @@ IEEE Journal of, vol.PP, no.99, pp.1-11.
 }
 \seealso{
 \code{\link[dtwSat]{twdtwApply}}
+
+define the dependencies of the dtwSat package
 }
 \author{
 Victor Maus, \email{vwmaus1@gmail.com}

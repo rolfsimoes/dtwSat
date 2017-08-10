@@ -18,27 +18,28 @@ Description: Provides an implementation of the Time-Weighted Dynamic Time
     series analysis, produce land cover maps, create temporal plots for land cover
     change, and compute accuracy assessment metrics.
 Depends:
-    R (>= 3.2.0),
-    zoo,
-    raster,
-    snow,
-    ggplot2
+    R (>= 3.2.0)
 Imports:
-    methods,
-    rgdal,
+    caret,
     dtw,
+    ggplot2,
+    grDevices,
+    lattice,
+    lubridate,
+    methods,
+    mgcv,
+    plyr,
     proxy,
     scales,
-    reshape2,
-    grDevices,
+    raster,
     RColorBrewer,
-    plyr,
+    reshape2,
+    rgdal,
+    snow,
     stats,
     sp,
-    lubridate,
-    caret,
-    mgcv,
-    xtable
+    xtable,
+    zoo
 Suggests:
     knitr,
     rmarkdown,
@@ -99,4 +100,3 @@ Collate:
     'twdtwDist.R'
     'twdtwXtable.R'
     'zzz.R'
-VignetteBuilder: knitr

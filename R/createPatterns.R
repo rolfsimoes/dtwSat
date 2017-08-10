@@ -63,8 +63,8 @@ setGeneric("createPatterns", function(x, from=NULL, to=NULL, freq=1, attr=NULL, 
 #' @aliases createPatterns-twdtwMatches
 #' @examples
 #' # Creating patterns from objects of class twdtwTimeSeries 
-#' evi = brick(system.file("lucc_MT/data/evi.tif", package="dtwSat"))
-#' ndvi = brick(system.file("lucc_MT/data/ndvi.tif", package="dtwSat"))
+#' evi = raster::brick(system.file("lucc_MT/data/evi.tif", package="dtwSat"))
+#' ndvi = raster::brick(system.file("lucc_MT/data/ndvi.tif", package="dtwSat"))
 #' timeline = scan(system.file("lucc_MT/data/timeline", package="dtwSat"), what="date")
 #' rts = twdtwRaster(evi, ndvi, timeline=timeline)
 #' 

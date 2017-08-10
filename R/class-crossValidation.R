@@ -48,7 +48,7 @@
 #' dates = scan(paste(data_folder,"timeline", sep = "/"), what = "dates")
 #' 
 #' # Read raster time series 
-#' evi = brick(paste(data_folder,"evi.tif", sep = "/"))
+#' evi = raster::brick(paste(data_folder,"evi.tif", sep = "/"))
 #' raster_timeseries = twdtwRaster(evi, timeline = dates)
 #' 
 #' # Read field samples 
