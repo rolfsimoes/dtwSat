@@ -38,4 +38,33 @@
 #' define the dependencies of the dtwSat package
 #' @import lattice
 #' 
-library(lattice)
+NULL
+
+
+#' @title TWDTW distance proxy register 
+#' @name twdtwProxyRegister
+#' @author Victor Maus, \email{vwmaus1@@gmail.com}
+#' 
+#' @description This function performs a multidimensional Time-Weighted DTW 
+#' analysis and retrieves the matches between the temporal patterns and 
+#' a set of time series [1].
+#' 
+#' @details Register TWDTW as a distance function into package proxy
+#' 
+#' @return NULL
+#' 
+#' @seealso 
+#' \code{\link[proxy]{pr_DB}}, 
+#' 
+#' @export  
+twdtwProxyRegister <- function(){
+  is_there <- c("TWDTW","twdtw") %in% proxy::pr_DB$get_entry_names()
+  sapply(c("TWDTW","twdtw")[is_there], proxy::pr_DB$delete_entry)
+  
+  proxy::pr_DB$set_entry(FUN   = .twdtwDist,
+                         names = c("TWDTW","twdtw"),
+                         loop  = FALSE,
+                         type  = "metric",
+                         description = "Time-Weighted Dynamic Time Warping",
+                         reference   = "Maus V, Camara G, Cartaxo R, Sanchez A, Ramos FM, de Queiroz GR (2016). A Time-Weighted Dynamic Time Warping method for land use and land cover mapping. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 9 (8), pp. 3729--3739. <doi: 10.1109/JSTARS.2016.2517118>."  )
+}
