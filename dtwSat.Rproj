@@ -17,5 +17,4 @@ PackageUseDevtools: Yes
 PackageInstallArgs: --no-multiarch --with-keep.source
 PackageBuildArgs: --compact-vignettes=gs+qpdf
 PackageBuildBinaryArgs: --compact-vignettes=gs+qpdf
-PackageCheckArgs: --no-examples --no-tests
 PackageRoxygenize: rd,collate,namespace
