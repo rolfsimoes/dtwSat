@@ -2,8 +2,8 @@ Package: dtwSat
 Type: Package
 Title: Time-Weighted Dynamic Time Warping for Satellite Image Time Series
     Analysis
-Version: 0.2.5.0001
-Date: 2017-08-10
+Version: 0.2.5.0002
+Date: 2017-09-11
 Authors@R: c(person('Victor', 'Maus', role = c('aut', 'cre'), email = 'vwmaus1@gmail.com'), 
              person('Marius', 'Appel', role = c('ctb')),
              person('Toni',   'Giorgino', role = c('ctb')))
@@ -20,7 +20,6 @@ Description: Provides an implementation of the Time-Weighted Dynamic Time
 Depends:
     R (>= 3.2.0),
     ggplot2,
-    raster,
     zoo
 Imports:
     caret,
@@ -32,6 +31,7 @@ Imports:
     mgcv,
     plyr,
     proxy,
+    raster,
     scales,
     RColorBrewer,
     reshape2,
